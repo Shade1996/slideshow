@@ -13,3 +13,37 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+
+
+/* @font-face {
+    font-family: "k3";
+    src: url("font/klavika-medium-webfont.woff") format('woff');
+    
+}
+
+@font-face {
+    font-family: "k4";
+    src: url("font/klavika-regular-webfont.woff") format('woff');
+} */
+@layer base {
+    @font-face {
+      font-family: 'k1';
+      src: url('../assets/font/klavika-bold-webfont.woff') format('woff');
+    }
+    @font-face {
+      font-family: "k2";
+      src: url('../assets/font/klavika-light-webfont.woff') format('woff');
+    }
+    @font-face {
+        font-family: "k3";
+        src: url('../assets/font/klavika-medium-webfont.woff') format('woff');
+      }
+      @font-face {
+        font-family: "k4";
+        src: url('../assets/font/klavika-regular-webfont.woff') format('woff');
+      }
+  }
+  .text-font{
+    font-family: k4;
+  }
+  
