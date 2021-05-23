@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { animated, config, useSpring } from 'react-spring';
 import ImageSlider from './components/ImageSlider'
 import Loading from './components/Loading'
 
@@ -7,12 +8,17 @@ function App() {
 	setTimeout(() => {
 		setPage(1)
 	}, 4000);
-
+	const props = useSpring({
+		to: { opacity: 1 },
+		from: { opacity: 0 },
+		delay: 200,
+		config: config.molasses,
+	  })
 	return(
-		<div>
+		<animated.div className="bg-black" style={props}>
 			{page === 0 && <Loading />}
 			{page === 1 && <ImageSlider />}
-		</div>
+		</animated.div>
 	)
 	
 }

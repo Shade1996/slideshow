@@ -7,6 +7,7 @@ import {ReactComponent as Logo} from '../assets/logo.svg'
 import PageSwith from './PageSwith'
 import { useSnapshot } from 'valtio'
 import { imageIndex } from '../state'
+import { animated, config, useSpring } from 'react-spring'
 
 const ImageSlider:React.FC = ()=> {
     useSnapshot(imageIndex)
@@ -27,9 +28,14 @@ const ImageSlider:React.FC = ()=> {
         },
         [],
     )
-
+    const props = useSpring({
+		to: { opacity: 1 },
+		from: { opacity: 0 },
+		delay: 200,
+		config: config.molasses,
+	  })
     return (
-        <div className="relative h-screen overflow-hidden ">
+        <animated.div className="relative h-screen overflow-hidden" style={props}>
             <Left className="h-16  absolute left-0 top-1/2  z-20 transform -translate-y-1/2 text-white stroke-current" onClick={previousImage} />
             <Right className="h-16 absolute right-0 top-1/2  z-20 transform -translate-y-1/2 text-white stroke-current" onClick={nextImage}  />
             <TextHeader />
@@ -42,20 +48,11 @@ const ImageSlider:React.FC = ()=> {
                     width: imageIndex.value ===9 ? "35vw" :"100vw",
                     backgroundPositionX:-imageIndex.value*1280
                     }}/>
-                    {/* <div className="flex-grow w-96"></div> */}
-                {/* {imageIndex.value === 9 ?
-                <div className="h-screen transition-all transform duration-700 ease-in-out flex justify-end right-0 bg-black text-white text-font p-4">
-                    <div className="text-5xl underline">BECOME A MONK</div>
-                </div> :""} */}
                 <div className="h-screen w-screen transition-all transform duration-700 ease-in-out flex justify-center bg-black text-white text-font p-4">
                     <div className="text-5xl underline">BECOME A MONK</div>
                 </div>
             </div>
-            
-            {/* {imageIndex.value === 9 ? <div className="absolute h-screen max-w-screen-xl transition-all transform duration-700 ease-in-out flex justify-end right-0 bg-black text-white flex-grow w-full text-font p-4">
-                <div className="text-5xl underline">BECOME A MONK</div>
-            </div>:""} */}
-        </div>
+        </animated.div>
     )
 }
 
