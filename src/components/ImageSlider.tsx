@@ -16,7 +16,6 @@ const ImageSlider:React.FC = ()=> {
             if (imageIndex.value +1 > 9 ) 
             return;
             imageIndex.value += 1
-            console.log(imageIndex.value)
         },
         [],
     )
