@@ -40,7 +40,7 @@ const ImageSlider:React.FC = ()=> {
             <TextHeader />
             <Logo className="absolute right-0 bottom-0 m-6 z-20 " />
             <PageSwith />
-            {imageIndex.value === 0 ?<div className="absolute bottom-14 ml-8 text-white w-60 break-words " style={{fontFamily:"k2"}}>Lorem ipsum dolor sit amet44ffgsg consectetur adipisicing elit. Aperiam animi quisquam fugi.</div>:""}
+            {imageIndex.value === 0 ?<div className="absolute bottom-14 ml-8 text-white w-60 break-words select-none" style={{fontFamily:"k2"}}>Lorem ipsum dolor sit amet44ffgsg consectetur adipisicing elit. Aperiam animi quisquam fugi.</div>:""}
             <div className="flex w-max" >
                 <div className="h-screen bg-no-repeat transition-all duration-700 ease-in-out " style={{ 
                     backgroundImage: `url(${backSrc})`,
@@ -48,7 +48,7 @@ const ImageSlider:React.FC = ()=> {
                     backgroundPositionX:-imageIndex.value*1280
                     }}/>
                 <div className="h-screen w-screen transition-all transform duration-700 ease-in-out flex justify-center bg-black text-white text-font p-4">
-                    <div className="text-5xl underline">BECOME A MONK</div>
+                    <div className="text-5xl underline select-none">BECOME A MONK</div>
                 </div>
             </div>
         </animated.div>

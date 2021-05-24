@@ -7,44 +7,48 @@ let [style,string] =['','']
 
 const TextHeader:React.FC = () => {
     useSnapshot(imageIndex)
-    if (imageIndex.value === 0 ) {
-        style = 'top-0 left-0 m-6'
-        string= 'WE ARE BREAKING\nOUR VOW\nOF SILENCE'
-    }
-    if (imageIndex.value === 1) {
-        style = 'left-16 top-1/2 transform -translate-y-1/2'
-        string = 'TALENT IS GIVEN\nTRUE SKILLED IS\nEARNED'
-    }
-    if (imageIndex.value === 2) {
-        style = 'left-16 top-1/2 transform -translate-y-1/2'
-        string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
-    }
-    if (imageIndex.value ===3 ) {
-        style = 'right-16 top-1/2 transform -translate-y-1/2'
-        string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
-    }
-    if (imageIndex.value ===4) {
-        style = 'right-16 top-1/2 transform -translate-y-1/2'
-        string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTIon'
-    }
-    if (imageIndex.value === 5) {
-        style = 'right-16 top-1/2 transform -translate-y-1/2'
-        string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
-    }
-    if (imageIndex.value === 6) {
-        style = 'left-16 top-1/2 transform -translate-y-1/2'
-        string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
-    }
-    if (imageIndex.value === 7) {
-        style = 'left-16 top-1/2 transform -translate-y-1/2'
-        string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
-    }
-    if (imageIndex.value === 8) {
-        style = 'left-16 top-1/2 transform -translate-y-1/2'
-        string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
-    }
-    if (imageIndex.value === 9) {
-        style='hidden'
+    switch (imageIndex.value) {
+        case 0:
+            style = 'top-0 left-0 m-6'
+            string= 'WE ARE BREAKING\nOUR VOW\nOF SILENCE'
+            break;
+        case 1:
+            style = 'left-16 top-1/2 transform -translate-y-1/2'
+            string = 'TALENT IS GIVEN\nTRUE SKILLED IS\nEARNED'
+            break
+        case 2:
+            style = 'left-16 top-1/2 transform -translate-y-1/2'
+            string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
+            break
+        case 3:
+            style = 'right-16 top-1/2 transform -translate-y-1/2'
+            string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
+            break
+        case 4:
+            style = 'right-16 top-1/2 transform -translate-y-1/2'
+            string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTIon'
+            break
+        case 5:
+            style = 'right-16 top-1/2 transform -translate-y-1/2'
+            string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
+            break
+        case 6:
+            style = 'left-16 top-1/2 transform -translate-y-1/2'
+            string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
+            break
+        case 7:
+            style = 'left-16 top-1/2 transform -translate-y-1/2'
+            string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
+            break
+        case 8:
+            style = 'left-16 top-1/2 transform -translate-y-1/2'
+            string = 'BE FLEXIBLE TO\nCHANGE AND\nSTUDY IN\nCONVICTION'
+            break
+        case 9:
+            style='hidden'
+            break
+        default:
+            break;
     }
 
     const props = useSpring({
@@ -56,7 +60,7 @@ const TextHeader:React.FC = () => {
     })
 
     return (
-        <animated.div className={`absolute text-white text-6xl underline whitespace-pre-line text-font `+ `${style}`} style={props}>
+        <animated.div className={`absolute text-white text-6xl underline whitespace-pre-line select-none text-font `+ `${style}`} style={props}>
             {string}
         </animated.div>
     )

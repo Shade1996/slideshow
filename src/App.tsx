@@ -20,7 +20,6 @@ function App() {
 			{page === 1 && <ImageSlider />}
 		</animated.div>
 	)
-	
 }
 
 export default App

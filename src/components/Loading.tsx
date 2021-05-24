@@ -10,7 +10,7 @@ function Loading() {
     }, [])
     
     return (
-        <div className="w-screen h-screen flex flex-col items-center justify-center text-white bg-black">
+        <div className="w-screen h-screen select-none flex flex-col items-center justify-center text-white bg-black">
             <div className="animate-bounce">
             <img src={monkSrc} alt="monk" className="mb-4"/>
             </div>

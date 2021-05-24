@@ -17,7 +17,7 @@ const PageSwith = ()=> {
 		config: config.molasses,
 	  })
     return (
-        <div className="absolute bottom-6 left-6 h-4 text-white flex items-center">
+        <div className="absolute bottom-6 left-6 h-4 text-white flex items-center select-none">
             <div className="flex  border border-dashed h-4 w-60 -m-px">
                 {boxes.map((p,i)=>(
                 <div className="w-6 h-full relative text-xs  border-r border-dashed flex justify-center items-center p-0.5" key={i} onClick={()=>{ imageIndex.value = p }}>
