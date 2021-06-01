@@ -3,11 +3,9 @@ import { animated, config, useSpring } from 'react-spring'
 import { useSnapshot } from 'valtio'
 import { imageIndex } from '../state'
 
-const boxes = new Array(10)
-for (let i = 0; i < boxes.length; i++) {
-     boxes[i] = i
-    
-}
+
+const boxes = [...Array.from({length:10}).keys()]
+
 const PageSwith = ()=> {
     useSnapshot(imageIndex)
     const props = useSpring({
